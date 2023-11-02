@@ -17,6 +17,8 @@
 
 .logo {
     flex-shrink: 0;
+    width: 100px;
+    padding-left:2rem;
 }
 
 .nav-menu {
@@ -42,6 +44,19 @@
     color: var(--accent);
 }
 
+.nav-hamburger {
+    display:none;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3rem;
+    color:var(--accent-lt);
+    width: 100%;
+}
+
+.nav-hamburger > span:hover{
+    color:var(--accent);
+}
+
 .description {
     padding: 0rem 1rem 0rem 1rem;
     font-size: small;
@@ -49,6 +64,69 @@
 
 body {
     font-family: 'Inter', sans-serif;
+}
+
+.slideshow {
+    background: var(--base);
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slideshow > h1 {
+    position: absolute;
+    top: 20%;
+    font-weight: 700;
+    font-size: 10rem;
+    margin:0;
+}
+
+.slideshow > h2 {
+    position: absolute;
+    top: 50%;
+    font-weight: 600;
+    font-size: 5rem;
+    margin:0;
+}
+
+.slideshow-arrow {
+    position: absolute;
+    top:45%;
+    font-size:5rem;
+    margin:0;
+    background-color: var(--accent-lt);
+    border-radius: var(--rounded-corner);
+    opacity: 40%;
+    transition: 0.15s;
+}
+
+.slideshow-arrow:hover {
+    opacity: 100%;
+}
+
+.slideshow > span:nth-child(4) {
+    left:1%;
+}
+
+.slideshow > span:nth-child(5) {
+    right:1%;
+}
+
+.slideshow-circles {
+    position: absolute;
+    bottom:1%;
+    color: var(--accent-lt);
+}
+
+.slideshow-circles > span {
+    opacity: 50%;
+    transition: 0.15s;
+    font-size: 2rem;
+}
+
+.slideshow-circles > span:hover {
+    opacity: 100%;
 }
 
 .card {
@@ -184,10 +262,15 @@ body {
 
 @media screen and (min-width: 550px) {
     .grid-container{grid-template-columns:repeat(2, 1fr);}
-  }
-  @media screen and (min-width: 768px) {
-    .grid-container{grid-template-columns:repeat(3, 1fr);}
-  }
-  @media screen and (min-width: 1080px) {
-    .grid-container{grid-template-columns:repeat(4, 1fr);}
-  }
+}
+@media screen and (max-width: 550px) {
+    .nav-menu{display:none;}
+    .nav-hamburger{display:flex;}
+}
+@media screen and (min-width: 768px) {
+.grid-container{grid-template-columns:repeat(3, 1fr);}
+
+}
+@media screen and (min-width: 1080px) {
+.grid-container{grid-template-columns:repeat(4, 1fr);}
+}
